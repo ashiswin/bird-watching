@@ -1,0 +1,12 @@
+{
+  "name": "bird-watching",
+  "displayName": "bird-watching",
+  "expo": {
+    "name": "bird-watching",
+    "slug": "bird-watching",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
