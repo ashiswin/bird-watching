@@ -45,14 +45,14 @@ const TabBar: React.FC = () => {
       <Tab.Screen name="Photo" component={EmptyComponent} options={{
         tabBarButton: () => (<PhotoScreen />),
       }} />
+      <Tab.Screen name="Dex" component={HomeScreen} options={{
+        tabBarLabel: 'Dex',
+        tabBarIcon: ({ focused }) => getIcon('list', focused),
+      }
+      } />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ focused }) => getIcon('person', focused),
-      }
-      } />
-      <Tab.Screen name="Notifications" component={HomeScreen} options={{
-        tabBarLabel: 'Notifications',
-        tabBarIcon: ({ focused }) => getIcon('notifications', focused),
       }
       } />
     </Tab.Navigator>
