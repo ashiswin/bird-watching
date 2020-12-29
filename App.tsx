@@ -18,8 +18,8 @@ const App: React.FC = () => {
           loggedIn
             ? <Stack.Screen name="Main" component={TabBar} />
             : <Stack.Screen name="Login">
-              {props => <LoginScreen {...props} onLogin={() => setLoggedIn(true)} />}
-            </Stack.Screen>
+                {props => <LoginScreen {...props} onLogin={() => setLoggedIn(true)} />}
+              </Stack.Screen>
         }
       </Stack.Navigator>
     </NavigationContainer>

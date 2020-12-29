@@ -3,6 +3,7 @@ import React from 'react';
 import { Icon } from 'react-native-elements';
 import HomeScreen from '../screens/HomeScreen';
 import PhotoScreen from '../screens/PhotoScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 const EmptyComponent = () => { return null };
@@ -16,7 +17,7 @@ const TabBar: React.FC = () => {
     tabStyle: { marginBottom: 12 },
     style: {
       height: 56,
-      backgroundColor: 'transparent',
+      backgroundColor: 'white',
       position: 'absolute',
       left: 0,
       right: 0,
@@ -44,7 +45,7 @@ const TabBar: React.FC = () => {
       <Tab.Screen name="Photo" component={EmptyComponent} options={{
         tabBarButton: () => (<PhotoScreen />),
       }} />
-      <Tab.Screen name="Profile" component={HomeScreen} options={{
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ focused }) => getIcon('person', focused),
       }
