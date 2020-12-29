@@ -2,13 +2,18 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, Text, ViewStyle } from "react-native";
 
 interface Props {
-  title: string,
-  backgroundColor?: string,
-  onPress?: (GestureResponderEvent) => void,
-  style?: ViewStyle,
+  title: string;
+  backgroundColor?: string;
+  onPress?: (GestureResponderEvent) => void;
+  style?: ViewStyle;
 }
 
-const Button: React.FC<Props> = ({ onPress, title, style, backgroundColor = 'grey' }) => (
+const Button: React.FC<Props> = ({
+  onPress,
+  title,
+  style,
+  backgroundColor = "grey",
+}) => (
   <TouchableOpacity
     onPress={onPress}
     activeOpacity={0.8}
@@ -16,11 +21,11 @@ const Button: React.FC<Props> = ({ onPress, title, style, backgroundColor = 'gre
       ...styles.appButtonContainer,
       backgroundColor: backgroundColor,
       ...style,
-    }}>
+    }}
+  >
     <Text style={styles.appButtonText}>{title}</Text>
   </TouchableOpacity>
 );
-
 
 const styles = StyleSheet.create({
   appButtonContainer: {
@@ -36,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#fff",
     alignSelf: "center",
-  }
+  },
 });
 
 export default Button;

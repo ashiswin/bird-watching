@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
 
 const HomeScreen: React.FC = () => {
   return (
@@ -7,6 +7,6 @@ const HomeScreen: React.FC = () => {
       <Text>Hello</Text>
     </View>
   );
-}
+};
 
 export default HomeScreen;

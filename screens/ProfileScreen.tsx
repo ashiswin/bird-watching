@@ -1,16 +1,17 @@
-import React from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
-import ProfileStat from '../components/ProfileStat';
+import React from "react";
+import { View, Image, Text, StyleSheet } from "react-native";
+import ProfileStat from "../components/ProfileStat";
 
 const ProfileScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image 
+        <Image
           source={{
-            uri: 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png'
-          }} 
-          style={styles.profilePicture} 
+            uri:
+              "https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png",
+          }}
+          style={styles.profilePicture}
         />
       </View>
       <Text style={styles.profileName}>Janne Jackson</Text>
@@ -22,14 +23,14 @@ const ProfileScreen: React.FC = () => {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    height: '100%',
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "white",
+    height: "100%",
   },
   imageContainer: {
     marginTop: 96,
@@ -46,14 +47,14 @@ const styles = StyleSheet.create({
   profileName: {
     fontSize: 24,
     marginTop: 20,
-    color: 'black',
-    fontWeight: 'bold',
+    color: "black",
+    fontWeight: "bold",
   },
   statsRow: {
-    flexDirection: 'row',
+    flexDirection: "row",
     flexGrow: 1,
-    width: '100%',
-    justifyContent: 'space-evenly',
+    width: "100%",
+    justifyContent: "space-evenly",
     marginTop: 12,
   },
 });

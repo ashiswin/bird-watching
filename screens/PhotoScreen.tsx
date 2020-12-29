@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { Button, Text, Icon } from 'react-native-elements';
-import Modal from 'react-native-modal';
+import { Button, Text, Icon } from "react-native-elements";
+import Modal from "react-native-modal";
 
 const PhotoScreen: React.FC = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <>
-      <Button onPress={() => { setModalVisible(true) }}
+      <Button
+        onPress={() => {
+          setModalVisible(true);
+        }}
         buttonStyle={styles.buttonStyle}
-        icon={
-          <Icon name="camera" color='white' />
-        }
+        icon={<Icon name="camera" color="white" />}
       />
       <View>
         <Modal
@@ -28,13 +29,13 @@ const PhotoScreen: React.FC = () => {
       </View>
     </>
   );
-}
+};
 const styles = StyleSheet.create({
   content: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 22,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     borderTopRightRadius: 17,
     borderTopLeftRadius: 17,
   },
@@ -43,16 +44,16 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   contentView: {
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
     margin: 0,
   },
   buttonStyle: {
     height: 48,
     width: 48,
-    backgroundColor: 'red',
+    backgroundColor: "red",
     borderRadius: 48,
     marginTop: 4,
-  }
+  },
 });
 
 export default PhotoScreen;
