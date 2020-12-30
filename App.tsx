@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState } from "react";
+import { StatusBar } from "react-native";
 import TabBar from "./components/TabBar";
 import LoginScreen from "./screens/LoginScreen";
 const Stack = createStackNavigator();
@@ -10,6 +11,7 @@ const App: React.FC = () => {
 
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
       <Stack.Navigator
         screenOptions={{
           headerShown: false,

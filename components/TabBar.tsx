@@ -4,6 +4,7 @@ import {
 } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { Icon } from "react-native-elements";
+import DexScreen from "../screens/DexScreen";
 import HomeScreen from "../screens/HomeScreen";
 import PhotoScreen from "../screens/PhotoScreen";
 import ProfileScreen from "../screens/ProfileScreen";
@@ -61,7 +62,7 @@ const TabBar: React.FC = () => {
       />
       <Tab.Screen
         name="Dex"
-        component={HomeScreen}
+        component={DexScreen}
         options={{
           tabBarLabel: "Dex",
           tabBarIcon: ({ focused }) => getIcon("list", focused),
