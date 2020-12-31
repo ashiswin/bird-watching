@@ -31,8 +31,8 @@ const DexScreen: React.FC = () => {
       />
       <FlatList
         data={birds}
-        renderItem={({ item }) => (
-          <DexListItem bird={item} found={false} key={item.id} />
+        renderItem={({ item, index }) => (
+          <DexListItem bird={item} found={index % 2 === 1} key={item.id} />
         )}
       />
     </View>

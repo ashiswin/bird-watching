@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState } from "react";
 import { StatusBar } from "react-native";
 import TabBar from "./components/TabBar";
+import BirdScreen from "./screens/BirdScreen";
 import LoginScreen from "./screens/LoginScreen";
 const Stack = createStackNavigator();
 
@@ -18,7 +19,10 @@ const App: React.FC = () => {
         }}
       >
         {loggedIn ? (
-          <Stack.Screen name="Main" component={TabBar} />
+          <>
+            <Stack.Screen name="Main" component={TabBar} />
+            <Stack.Screen name="Bird" component={BirdScreen} />
+          </>
         ) : (
           <Stack.Screen name="Login">
             {(props) => (
