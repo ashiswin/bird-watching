@@ -53,10 +53,10 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     marginBottom: -44,
     marginTop: 16,
-    marginLeft: 8,
+    marginLeft: 4,
     zIndex: 1,
     borderRadius: 20,
-    padding: 4,
+    padding: 8,
   },
   image: {
     width: "100%",
