@@ -4,9 +4,9 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
   Dimensions,
 } from "react-native";
+import AppTextInput from "../components/AppTextInput";
 import Button from "../components/Button";
 
 const background = {
@@ -33,18 +33,16 @@ const LoginScreen: React.FC<Props> = ({ onLogin }) => {
         </View>
         <View style={styles.logincontainer}>
           <Text style={{ color: "black" }}>Sign in to get started</Text>
-          <TextInput
-            style={styles.textbox}
-            onChangeText={(text) => setUsername(text)}
+          <AppTextInput
+            onChange={(text) => setUsername(text)}
             value={username}
             placeholder="Username"
           />
-          <TextInput
-            style={styles.textbox}
-            onChangeText={(text) => setPassword(text)}
+          <AppTextInput
+            onChange={(text) => setPassword(text)}
             value={password}
             placeholder="Password"
-            secureTextEntry={true}
+            password
           />
           <View style={styles.loginButtonContainer}>
             <Button
@@ -119,14 +117,6 @@ const styles = StyleSheet.create({
   loginButtonContainer: {
     flexDirection: "row",
     marginTop: 8,
-  },
-  textbox: {
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: "#EFEFEF",
-    width: "100%",
-    marginTop: 8,
-    paddingHorizontal: 16,
   },
   loginButton: {
     height: 40,
