@@ -21,7 +21,7 @@ const BirdScreen: React.FC<Props> = ({ navigation, route }) => {
       <Pressable
         style={({ pressed }) => [
           {
-            backgroundColor: pressed ? "#EFEFEF" : "transparent",
+            backgroundColor: pressed ? "#AAAAAA" : "transparent",
           },
           styles.backButton,
         ]}
@@ -29,7 +29,7 @@ const BirdScreen: React.FC<Props> = ({ navigation, route }) => {
           navigation.goBack();
         }}
       >
-        <Icon name="arrow-back" />
+        <Icon name="arrow-back" color="white" />
       </Pressable>
       <Image
         source={{ uri: bird.image }}
