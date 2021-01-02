@@ -4,6 +4,12 @@ export interface Bird {
   scientific: string;
   image: string;
   description: string;
+  lastLocation?: {
+    lat: number;
+    lon: number;
+    date: string;
+    time: string;
+  };
 }
 
 export const Birds: Bird[] = [
@@ -22,6 +28,12 @@ export const Birds: Bird[] = [
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Eopsaltria_australis_-_Mogo_Campground.jpg/1200px-Eopsaltria_australis_-_Mogo_Campground.jpg",
     description: "Big birdy bird bird",
+    lastLocation: {
+      lat: 37.78825,
+      lon: -122.4324,
+      date: "2021-01-02",
+      time: "10:03:00",
+    },
   },
   {
     id: "3",

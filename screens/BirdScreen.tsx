@@ -2,6 +2,8 @@ import { NavigationProp, Route } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { Icon, Image } from "react-native-elements";
+import MapView, { Marker } from "react-native-maps";
+import moment from "moment";
 import { Bird } from "../providers/BirdProvider";
 
 interface Params {
@@ -40,6 +42,37 @@ const BirdScreen: React.FC<Props> = ({ navigation, route }) => {
         <Text style={styles.name}>{bird.name}</Text>
         <Text style={styles.scientificName}>{bird.scientific}</Text>
       </View>
+      <View>
+        <Text style={styles.title}>Last location</Text>
+        {bird.lastLocation !== undefined ? (
+          <MapView
+            initialRegion={{
+              latitude: bird.lastLocation.lat,
+              longitude: bird.lastLocation.lon,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+            style={styles.map}
+          >
+            <Marker
+              coordinate={{
+                latitude: bird.lastLocation.lat,
+                longitude: bird.lastLocation.lon,
+              }}
+              title={
+                "Last seen: " +
+                moment(
+                  `${bird.lastLocation.date}T${bird.lastLocation.time}`
+                ).format("Do MMM YYYY")
+              }
+            />
+          </MapView>
+        ) : (
+          <Text style={styles.lastLocationMissing}>
+            This bird has not been sighted yet.
+          </Text>
+        )}
+      </View>
     </View>
   );
 };
@@ -73,6 +106,22 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     color: "#999999",
     marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 26,
+    color: "black",
+    fontWeight: "bold",
+    marginHorizontal: 16,
+    marginTop: 12,
+  },
+  map: {
+    width: "100%",
+    height: 240,
+    marginTop: 12,
+  },
+  lastLocationMissing: {
+    marginHorizontal: 16,
+    marginTop: 8,
   },
 });
 
