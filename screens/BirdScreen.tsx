@@ -9,11 +9,10 @@ import {
   NativeSyntheticEvent,
   NativeScrollEvent,
 } from "react-native";
-import { Icon, Image } from "react-native-elements";
+import { Image } from "react-native-elements";
 import MapView, { Marker } from "react-native-maps";
 import moment from "moment";
 import { Bird } from "../providers/BirdProvider";
-import rgbHex from "rgb-hex";
 import PhotoStreamImage from "../components/birdview/PhotoStreamImage";
 import FadingActionBar from "../components/FadingActionBar";
 
