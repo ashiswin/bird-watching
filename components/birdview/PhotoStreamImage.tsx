@@ -20,7 +20,7 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
         <Pressable
           style={({ pressed }) => [
             {
-              backgroundColor: pressed ? "#22AAAAAA" : "transparent",
+              backgroundColor: pressed ? "rgba(0, 0, 0, 0.2)" : "transparent",
             },
             styles.reactButton,
           ]}
@@ -33,7 +33,7 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
         <Pressable
           style={({ pressed }) => [
             {
-              backgroundColor: pressed ? "#22AAAAAA" : "transparent",
+              backgroundColor: pressed ? "rgba(0, 0, 0, 0.2)" : "transparent",
             },
             styles.reactButton,
           ]}
