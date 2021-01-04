@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Text, FlatList } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
+import { Colors } from "../utils/Colors";
 import AppTextInput from "../components/AppTextInput";
 import DexListItem from "../components/dex/DexListItem";
 import { Birds } from "../providers/BirdProvider";
@@ -62,7 +63,7 @@ const DexScreen: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
+    backgroundColor: Colors.SURFACE_BACKGROUND,
     flexGrow: 1,
     paddingHorizontal: 16,
   },
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
-    color: "black",
+    color: Colors.PRIMARY_TEXT,
     marginTop: 4,
     fontWeight: "bold",
   },

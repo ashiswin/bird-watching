@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Pressable, StyleSheet, View, Text } from "react-native";
 import { Icon, Image } from "react-native-elements";
 import ImageView from "react-native-image-viewing";
+import { Colors } from "../../utils/Colors";
 
 interface Props {
   source: string;
@@ -23,7 +24,9 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
           <Pressable
             style={({ pressed }) => [
               {
-                backgroundColor: pressed ? "rgba(0, 0, 0, 0.2)" : "transparent",
+                backgroundColor: pressed
+                  ? Colors.TOUCH_HIGHLIGHT
+                  : Colors.TRANSPARENT,
               },
               styles.image,
               styles.imageOverlay,
@@ -37,7 +40,9 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
           <Pressable
             style={({ pressed }) => [
               {
-                backgroundColor: pressed ? "rgba(0, 0, 0, 0.2)" : "transparent",
+                backgroundColor: pressed
+                  ? Colors.TOUCH_HIGHLIGHT
+                  : Colors.TRANSPARENT,
               },
               styles.reactButton,
             ]}
@@ -50,7 +55,9 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
           <Pressable
             style={({ pressed }) => [
               {
-                backgroundColor: pressed ? "rgba(0, 0, 0, 0.2)" : "transparent",
+                backgroundColor: pressed
+                  ? Colors.TOUCH_HIGHLIGHT
+                  : Colors.TRANSPARENT,
               },
               styles.reactButton,
             ]}
@@ -78,8 +85,8 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
                 style={({ pressed }) => [
                   {
                     backgroundColor: pressed
-                      ? "rgba(255, 255, 255, 0.2)"
-                      : "transparent",
+                      ? Colors.TOUCH_HIGHLIGHT_INVERSE
+                      : Colors.TRANSPARENT,
                   },
                   styles.reactButton,
                 ]}
@@ -97,8 +104,8 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
                 style={({ pressed }) => [
                   {
                     backgroundColor: pressed
-                      ? "rgba(255, 255, 255, 0.2)"
-                      : "transparent",
+                      ? Colors.TOUCH_HIGHLIGHT_INVERSE
+                      : Colors.TRANSPARENT,
                     flexDirection: "row",
                     alignItems: "center",
                   },
@@ -134,7 +141,7 @@ const styles = StyleSheet.create({
   reactRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "transparent",
+    backgroundColor: Colors.TRANSPARENT,
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
     paddingHorizontal: 4,

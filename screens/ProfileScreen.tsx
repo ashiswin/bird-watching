@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import ProfileStat from "../components/ProfileStat";
+import { Colors } from "../utils/Colors";
 
 const ProfileScreen: React.FC = () => {
   return (
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "white",
+    backgroundColor: Colors.SURFACE_BACKGROUND,
     height: "100%",
   },
   imageContainer: {
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   profileName: {
     fontSize: 24,
     marginTop: 20,
-    color: "black",
+    color: Colors.PRIMARY_TEXT,
     fontWeight: "bold",
   },
   statsRow: {

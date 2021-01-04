@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import AppTextInput from "../components/AppTextInput";
 import Button from "../components/Button";
+import { Colors } from "../utils/Colors";
 
 const background = {
   uri:
@@ -32,7 +33,9 @@ const LoginScreen: React.FC<Props> = ({ onLogin }) => {
           <Text style={styles.title}>Login</Text>
         </View>
         <View style={styles.logincontainer}>
-          <Text style={{ color: "black" }}>Sign in to get started</Text>
+          <Text style={{ color: Colors.PRIMARY_TEXT }}>
+            Sign in to get started
+          </Text>
           <AppTextInput
             onChange={(text) => setUsername(text)}
             value={username}
@@ -47,7 +50,7 @@ const LoginScreen: React.FC<Props> = ({ onLogin }) => {
           <View style={styles.loginButtonContainer}>
             <Button
               title="Login"
-              backgroundColor="#00BFFF"
+              backgroundColor={Colors.PRIMARY_BUTTON}
               style={{ marginRight: 2 }}
               onPress={() => onLogin()}
             />
@@ -90,7 +93,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 42,
-    color: "#FFFFFF",
+    color: Colors.PRIMARY_TEXT_ON_MEDIA,
     marginHorizontal: 12,
     fontWeight: "bold",
   },
@@ -117,12 +120,6 @@ const styles = StyleSheet.create({
   loginButtonContainer: {
     flexDirection: "row",
     marginTop: 8,
-  },
-  loginButton: {
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: "red",
-    flexGrow: 1,
   },
 });
 

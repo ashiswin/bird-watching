@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, Text, ViewStyle } from "react-native";
+import { Colors } from "../utils/Colors";
 
 interface Props {
   title: string;
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 16,
-    color: "#fff",
+    color: Colors.PRIMARY_TEXT_ON_MEDIA,
     alignSelf: "center",
   },
 });

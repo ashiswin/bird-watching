@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
+import { Colors } from "../utils/Colors";
 
 interface Props {
   title: string;
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
   count: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "black",
+    color: Colors.PRIMARY_TEXT,
     marginBottom: -4,
     marginHorizontal: 8,
   },

@@ -3,6 +3,7 @@ import React from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { Icon } from "react-native-elements";
 import { Bird } from "../../providers/BirdProvider";
+import { Colors } from "../../utils/Colors";
 
 interface Props {
   bird: Bird;
@@ -47,17 +48,17 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 20,
-    color: "black",
+    color: Colors.PRIMARY_TEXT,
     fontWeight: "bold",
   },
   scientificName: {
     fontStyle: "italic",
-    color: "#999999",
+    color: Colors.SECONDARY_TEXT,
   },
   divider: {
     height: StyleSheet.hairlineWidth,
     width: "100%",
-    backgroundColor: "grey",
+    backgroundColor: Colors.DIVIDER,
   },
 });
 

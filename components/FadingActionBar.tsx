@@ -1,6 +1,7 @@
 import React from "react";
 import { Pressable, View, Text, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
+import { Colors } from "../utils/Colors";
 import rgbHex from "rgb-hex";
 
 interface Props {
@@ -26,7 +27,9 @@ const FadingActionBar: React.FC<Props> = ({
       <Pressable
         style={({ pressed }) => [
           {
-            backgroundColor: pressed ? "#AAAAAA" : "transparent",
+            backgroundColor: pressed
+              ? Colors.TOUCH_HIGHLIGHT
+              : Colors.TRANSPARENT,
           },
           styles.backButton,
         ]}
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
   },
   actionBarTitle: {
     fontSize: 20,
-    color: "black",
+    color: Colors.PRIMARY_TEXT,
     marginTop: 4,
     fontWeight: "bold",
   },
