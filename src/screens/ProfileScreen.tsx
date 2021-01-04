@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
-import ProfileStat from "../components/ProfileStat";
+import ProfileStat from "../components/profile/ProfileStat";
 import { Colors } from "../utils/Colors";
 import { Spacing } from "../utils/Spacing";
 

@@ -2,9 +2,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState } from "react";
 import { StatusBar } from "react-native";
-import TabBar from "./components/TabBar";
-import BirdScreen from "./screens/BirdScreen";
-import LoginScreen from "./screens/LoginScreen";
+import TabBar from "./src/components/TabBar";
+import BirdScreen from "./src/screens/BirdScreen";
+import LoginScreen from "./src/screens/LoginScreen";
 const Stack = createStackNavigator();
 
 const App: React.FC = () => {
