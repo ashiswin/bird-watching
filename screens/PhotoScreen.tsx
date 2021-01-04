@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Button, Text, Icon } from "react-native-elements";
 import Modal from "react-native-modal";
+import { Colors } from "../utils/Colors";
+import { Spacing } from "../utils/Spacing";
 
 const PhotoScreen: React.FC = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -12,7 +14,7 @@ const PhotoScreen: React.FC = () => {
           setModalVisible(true);
         }}
         buttonStyle={styles.buttonStyle}
-        icon={<Icon name="camera" color="white" />}
+        icon={<Icon name="camera" color={Colors.PRIMARY_ICON_ON_MEDIA} />}
       />
       <View>
         <Modal
@@ -33,7 +35,7 @@ const PhotoScreen: React.FC = () => {
 const styles = StyleSheet.create({
   content: {
     backgroundColor: "white",
-    padding: 22,
+    padding: Spacing.XXLARGE,
     justifyContent: "center",
     alignItems: "center",
     borderTopRightRadius: 17,
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
   },
   contentTitle: {
     fontSize: 20,
-    marginBottom: 12,
+    marginBottom: Spacing.MEDIUM,
   },
   contentView: {
     justifyContent: "flex-end",
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
     width: 48,
     backgroundColor: "red",
     borderRadius: 48,
-    marginTop: 4,
+    marginTop: Spacing.XSMALL,
   },
 });
 

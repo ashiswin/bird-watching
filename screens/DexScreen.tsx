@@ -6,6 +6,7 @@ import AppTextInput from "../components/AppTextInput";
 import DexListItem from "../components/dex/DexListItem";
 import { Birds } from "../providers/BirdProvider";
 import { Regions } from "../providers/RegionProvider";
+import { Spacing } from "../utils/Spacing";
 
 const DexScreen: React.FC = () => {
   const [search, setSearch] = useState("");
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.SURFACE_BACKGROUND,
     flexGrow: 1,
-    paddingHorizontal: 16,
+    paddingHorizontal: Spacing.LARGE,
   },
   titleRow: {
     flexDirection: "row",
@@ -75,11 +76,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     color: Colors.PRIMARY_TEXT,
-    marginTop: 4,
+    marginTop: Spacing.XSMALL,
     fontWeight: "bold",
   },
   birdList: {
-    marginTop: 8,
+    marginTop: Spacing.SMALL,
   },
 });
 

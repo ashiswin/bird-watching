@@ -9,6 +9,7 @@ import {
 import AppTextInput from "../components/AppTextInput";
 import Button from "../components/Button";
 import { Colors } from "../utils/Colors";
+import { Spacing } from "../utils/Spacing";
 
 const background = {
   uri:
@@ -88,28 +89,28 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 20,
     color: "white",
-    marginHorizontal: 12,
-    marginBottom: -4,
+    marginHorizontal: Spacing.MEDIUM,
+    marginBottom: -Spacing.XSMALL,
   },
   title: {
     fontSize: 42,
     color: Colors.PRIMARY_TEXT_ON_MEDIA,
-    marginHorizontal: 12,
+    marginHorizontal: Spacing.MEDIUM,
     fontWeight: "bold",
   },
   titleContainer: {
     flexGrow: 1,
     position: "absolute",
-    top: 12,
+    top: Spacing.MEDIUM,
     left: 0,
   },
   logincontainer: {
     backgroundColor: "white",
-    marginHorizontal: 12,
+    marginHorizontal: Spacing.MEDIUM,
     borderRadius: 8,
-    marginBottom: 12,
+    marginBottom: Spacing.MEDIUM,
     alignItems: "center",
-    padding: 12,
+    padding: Spacing.MEDIUM,
   },
   content: {
     zIndex: 2,
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
   },
   loginButtonContainer: {
     flexDirection: "row",
-    marginTop: 8,
+    marginTop: Spacing.SMALL,
   },
 });
 

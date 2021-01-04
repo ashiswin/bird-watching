@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, Pressable } from "react-native";
 import { Icon } from "react-native-elements";
 import { Bird } from "../../providers/BirdProvider";
 import { Colors } from "../../utils/Colors";
+import { Spacing } from "../../utils/Spacing";
 
 interface Props {
   bird: Bird;
@@ -39,7 +40,7 @@ const DexListItem: React.FC<Props> = ({ bird, found }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    paddingVertical: 4,
+    paddingVertical: Spacing.XSMALL,
     alignItems: "center",
     justifyContent: "space-between",
   },

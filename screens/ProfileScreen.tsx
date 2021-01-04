@@ -2,6 +2,7 @@ import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import ProfileStat from "../components/ProfileStat";
 import { Colors } from "../utils/Colors";
+import { Spacing } from "../utils/Spacing";
 
 const ProfileScreen: React.FC = () => {
   return (
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   },
   profileName: {
     fontSize: 24,
-    marginTop: 20,
+    marginTop: Spacing.XLARGE,
     color: Colors.PRIMARY_TEXT,
     fontWeight: "bold",
   },
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     width: "100%",
     justifyContent: "space-evenly",
-    marginTop: 12,
+    marginTop: Spacing.MEDIUM,
   },
 });
 export default ProfileScreen;

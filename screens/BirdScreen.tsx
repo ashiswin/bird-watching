@@ -16,6 +16,7 @@ import { Bird } from "../providers/BirdProvider";
 import PhotoStreamImage from "../components/birdview/PhotoStreamImage";
 import FadingActionBar from "../components/FadingActionBar";
 import { Colors } from "../utils/Colors";
+import { Spacing } from "../utils/Spacing";
 
 const IMAGE_HEIGHT_DP = 240;
 
@@ -167,28 +168,28 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: Colors.PRIMARY_TEXT,
     fontWeight: "bold",
-    marginHorizontal: 16,
-    marginTop: 12,
+    marginHorizontal: Spacing.LARGE,
+    marginTop: Spacing.MEDIUM,
   },
   scientificName: {
     fontStyle: "italic",
     color: Colors.SECONDARY_TEXT,
-    marginHorizontal: 16,
+    marginHorizontal: Spacing.LARGE,
   },
   title: {
     fontSize: 26,
     color: Colors.PRIMARY_TEXT,
     fontWeight: "bold",
-    marginHorizontal: 16,
-    marginVertical: 12,
+    marginHorizontal: Spacing.LARGE,
+    marginVertical: Spacing.MEDIUM,
   },
   map: {
     width: "100%",
     height: 240,
   },
   lastLocationMissing: {
-    marginHorizontal: 16,
-    marginTop: 8,
+    marginHorizontal: Spacing.LARGE,
+    marginTop: Spacing.SMALL,
   },
   addPhoto: {
     color: Colors.LINK_TEXT,

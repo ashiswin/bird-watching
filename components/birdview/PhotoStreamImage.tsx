@@ -3,6 +3,7 @@ import { Pressable, StyleSheet, View, Text } from "react-native";
 import { Icon, Image } from "react-native-elements";
 import ImageView from "react-native-image-viewing";
 import { Colors } from "../../utils/Colors";
+import { Spacing } from "../../utils/Spacing";
 
 interface Props {
   source: string;
@@ -50,7 +51,11 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
               setLiked(!liked);
             }}
           >
-            <Icon name="favorite" color={liked ? "red" : "white"} size={16} />
+            <Icon
+              name="favorite"
+              color={liked ? "red" : Colors.PRIMARY_ICON_ON_MEDIA}
+              size={16}
+            />
           </Pressable>
           <Pressable
             style={({ pressed }) => [
@@ -62,7 +67,11 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
               styles.reactButton,
             ]}
           >
-            <Icon name="person" color="white" size={16} />
+            <Icon
+              name="person"
+              color={Colors.PRIMARY_ICON_ON_MEDIA}
+              size={16}
+            />
           </Pressable>
         </View>
       </View>
@@ -96,7 +105,7 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
               >
                 <Icon
                   name="favorite"
-                  color={liked ? "red" : "white"}
+                  color={liked ? "red" : Colors.PRIMARY_ICON_ON_MEDIA}
                   size={24}
                 />
               </Pressable>
@@ -112,10 +121,19 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
                   styles.reactButton,
                 ]}
               >
-                <Text style={{ color: "white", marginRight: 8 }}>
+                <Text
+                  style={{
+                    color: Colors.PRIMARY_TEXT_ON_MEDIA,
+                    marginRight: 8,
+                  }}
+                >
                   @ashiswin
                 </Text>
-                <Icon name="person" color="white" size={24} />
+                <Icon
+                  name="person"
+                  color={Colors.PRIMARY_ICON_ON_MEDIA}
+                  size={24}
+                />
               </Pressable>
             </View>
           );
@@ -129,7 +147,7 @@ const styles = StyleSheet.create({
   image: {
     width: 168,
     height: 108,
-    marginHorizontal: 4,
+    marginHorizontal: Spacing.XSMALL,
     borderRadius: 8,
   },
   imageOverlay: {
@@ -144,13 +162,13 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.TRANSPARENT,
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
-    paddingHorizontal: 4,
+    paddingHorizontal: Spacing.XSMALL,
     position: "relative",
     top: -32,
     zIndex: 2,
   },
   reactButton: {
-    padding: 8,
+    padding: Spacing.SMALL,
     borderRadius: 16,
   },
 });

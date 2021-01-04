@@ -8,6 +8,8 @@ import DexScreen from "../screens/DexScreen";
 import HomeScreen from "../screens/HomeScreen";
 import PhotoScreen from "../screens/PhotoScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import { Colors } from "../utils/Colors";
+import { Spacing } from "../utils/Spacing";
 
 const Tab = createBottomTabNavigator();
 const EmptyComponent = () => {
@@ -19,11 +21,11 @@ const TabBar: React.FC = () => {
     activeTintColor: "black",
     inactiveTintColor: "grey",
     allowFontScaling: true,
-    labelStyle: { fontSize: 12, marginTop: -8 },
-    tabStyle: { marginBottom: 12 },
+    labelStyle: { fontSize: 12, marginTop: -Spacing.SMALL },
+    tabStyle: { marginBottom: Spacing.MEDIUM },
     style: {
       height: 56,
-      backgroundColor: "white",
+      backgroundColor: Colors.SURFACE_BACKGROUND,
       position: "absolute",
       left: 0,
       right: 0,
@@ -32,7 +34,10 @@ const TabBar: React.FC = () => {
     },
   };
   const getIcon = (name: string, focused: boolean) => (
-    <Icon name={name} color={focused ? "black" : "#999999"} />
+    <Icon
+      name={name}
+      color={focused ? Colors.PRIMARY_ICON : Colors.SECONDARY_ICON}
+    />
   );
 
   return (

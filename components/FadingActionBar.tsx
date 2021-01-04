@@ -3,6 +3,7 @@ import { Pressable, View, Text, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
 import { Colors } from "../utils/Colors";
 import rgbHex from "rgb-hex";
+import { Spacing } from "../utils/Spacing";
 
 interface Props {
   title?: string;
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     width: "100%",
     position: "absolute",
-    paddingBottom: 8,
+    paddingBottom: Spacing.SMALL,
     top: 0,
     left: 0,
     zIndex: 1,
@@ -66,15 +67,15 @@ const styles = StyleSheet.create({
   actionBarTitle: {
     fontSize: 20,
     color: Colors.PRIMARY_TEXT,
-    marginTop: 4,
+    marginTop: Spacing.XSMALL,
     fontWeight: "bold",
   },
   backButton: {
     alignSelf: "flex-start",
-    marginTop: 8,
-    marginLeft: 4,
+    marginTop: Spacing.SMALL,
+    marginLeft: Spacing.XSMALL,
     borderRadius: 20,
-    padding: 8,
+    padding: Spacing.SMALL,
   },
 });
 

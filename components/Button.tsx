@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, Text, ViewStyle } from "react-native";
 import { Colors } from "../utils/Colors";
+import { Spacing } from "../utils/Spacing";
 
 interface Props {
   title: string;
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 16,
+    paddingHorizontal: Spacing.LARGE,
     height: 40,
     flexGrow: 1,
   },
