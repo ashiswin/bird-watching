@@ -5,6 +5,7 @@ import {
 import React from "react";
 import { Icon } from "react-native-elements";
 import DexScreen from "../screens/DexScreen";
+import ShotsScreen from "../screens/ShotsScreen";
 import HomeScreen from "../screens/HomeScreen";
 import PhotoScreen from "../screens/PhotoScreen";
 import ProfileScreen from "../screens/ProfileScreen";
@@ -52,7 +53,7 @@ const TabBar: React.FC = () => {
       />
       <Tab.Screen
         name="My Shots"
-        component={HomeScreen}
+        component={ShotsScreen}
         options={{
           tabBarLabel: "My Shots",
           tabBarIcon: ({ focused }) => getIcon("burst-mode", focused),
