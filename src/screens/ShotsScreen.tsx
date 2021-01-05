@@ -1,16 +1,39 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { NavigationProp, Route } from "@react-navigation/native";
+import { View, StyleSheet, Text, FlatList } from "react-native";
+import PhotoGalleryThumbnail from "../components/photos/PhotoGalleryView";
+import { getPhotosForUser, Photo } from "../providers/PhotoProvider";
 import { Colors } from "../utils/Colors";
 import { Spacing } from "../utils/Spacing";
 
-const ShotsScreen: React.FC = () => {
+interface Params {
+    photo: Photo;
+}
+
+interface Props {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    navigation: NavigationProp<any>;
+    route: Route<string, Params>;
+}
+
+const ShotsScreen: React.FC<Props> = ({ navigation, route }) => {
 
     return (
         <View style={styles.container}>
             <View style={styles.titleRow}>
                 <Text style={styles.title}>My Shots</Text>
             </View>
+            <FlatList
+                data={getPhotosForUser("")}
+                horizontal={false}
+                numColumns={3}
+                renderItem={({ item }) => (
+                    <PhotoGalleryThumbnail source={item.uri} />
+                )}
+                style={styles.imageGrid}
+            />
         </View>
+
     );
 };
 
@@ -18,7 +41,6 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.SURFACE_BACKGROUND,
         flexGrow: 1,
-        paddingHorizontal: Spacing.LARGE,
     },
     titleRow: {
         flexDirection: "row",
@@ -30,6 +52,11 @@ const styles = StyleSheet.create({
         color: Colors.PRIMARY_TEXT,
         marginTop: Spacing.XSMALL,
         fontWeight: "bold",
+        marginHorizontal: Spacing.LARGE,
+    },
+    imageGrid: {
+        marginHorizontal: Spacing.LARGE + 1,
+        marginTop: Spacing.SMALL
     },
 });
 
