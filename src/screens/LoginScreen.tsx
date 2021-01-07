@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     left: 0,
   },
   logincontainer: {
-    backgroundColor: "white",
+    backgroundColor: Colors.SURFACE_BACKGROUND,
     marginHorizontal: Spacing.MEDIUM,
     borderRadius: 8,
     marginBottom: Spacing.MEDIUM,
