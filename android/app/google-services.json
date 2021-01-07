@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "352998371403",
+    "project_id": "bird-watching-300503",
+    "storage_bucket": "bird-watching-300503.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352998371403:android:c639efcdb801bf55d7ddce",
+        "android_client_info": {
+          "package_name": "com.birdwatching"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352998371403-k9gj72ufe76s07vh30ah4jkgnqrdomku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTglr0sKRXDaysBS9kIa7z-mOLWFLteRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352998371403-k9gj72ufe76s07vh30ah4jkgnqrdomku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
