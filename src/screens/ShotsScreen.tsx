@@ -5,7 +5,7 @@ import { getPhotosForUser } from "../providers/PhotoProvider";
 import { Colors } from "../utils/Colors";
 import { Spacing } from "../utils/Spacing";
 
-const ShotsScreen: React.FC = ({ }) => {
+const ShotsScreen: React.FC = () => {
 
     return (
         <View style={styles.container}>
