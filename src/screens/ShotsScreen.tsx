@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text, FlatList } from "react-native";
-import PhotoGalleryThumbnail from "../components/photos/PhotoGalleryView";
+import PhotoGalleryThumbnail from "../components/photos/PhotoGalleryThumbnail";
 import { getPhotosForUser } from "../providers/PhotoProvider";
 import { Colors } from "../utils/Colors";
 import { Spacing } from "../utils/Spacing";
@@ -22,7 +22,6 @@ const ShotsScreen: React.FC = () => {
                 style={styles.imageGrid}
             />
         </View>
-
     );
 };
 
