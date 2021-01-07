@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { Pressable, StyleSheet, View, Text, Dimensions } from "react-native";
+import { Pressable, StyleSheet, View, Dimensions } from "react-native";
 import { Image } from "react-native-elements";
 import ImageView from "react-native-image-viewing";
 import { Colors } from "../../utils/Colors";
 import { Spacing } from "../../utils/Spacing";
+import { Photo } from "../../providers/PhotoProvider";
 
 interface Props {
-    source: string;
+    photo: Photo;
 }
 
-const PhotoGalleryThumbnail: React.FC<Props> = ({ source }) => {
+const PhotoGalleryThumbnail: React.FC<Props> = ({ photo }) => {
     const [isViewing, setIsViewing] = useState(false);
 
     return (
@@ -17,7 +18,7 @@ const PhotoGalleryThumbnail: React.FC<Props> = ({ source }) => {
             <View>
                 <View>
                     <Image
-                        source={{ uri: source }}
+                        source={{ uri: photo.uri }}
                         style={styles.image}
                         resizeMethod="resize"
                     />
@@ -38,7 +39,7 @@ const PhotoGalleryThumbnail: React.FC<Props> = ({ source }) => {
                 </View>
             </View>
             <ImageView
-                images={[{ uri: source }]}
+                images={[{ uri: photo.uri }]}
                 imageIndex={0}
                 visible={isViewing}
                 onRequestClose={() => setIsViewing(false)}

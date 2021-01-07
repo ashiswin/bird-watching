@@ -5,7 +5,7 @@ import { getPhotosForUser } from "../providers/PhotoProvider";
 import { Colors } from "../utils/Colors";
 import { Spacing } from "../utils/Spacing";
 
-const ShotsScreen: React.FC = ({ }) => {
+const ShotsScreen: React.FC = () => {
 
     return (
         <View style={styles.container}>
@@ -17,7 +17,7 @@ const ShotsScreen: React.FC = ({ }) => {
                 horizontal={false}
                 numColumns={3}
                 renderItem={({ item }) => (
-                    <PhotoGalleryThumbnail source={item.uri} />
+                    <PhotoGalleryThumbnail photo={item} />
                 )}
                 style={styles.imageGrid}
             />
