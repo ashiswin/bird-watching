@@ -1,14 +1,32 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StatusBar } from "react-native";
+import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
 import TabBar from "./src/components/TabBar";
 import BirdScreen from "./src/screens/BirdScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 const Stack = createStackNavigator();
 
 const App: React.FC = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState(undefined);
+
+  const onAuthStateChanged = (user: FirebaseAuthTypes.User) => {
+    setUser(user);
+    if (initializing) {
+      setInitializing(false);
+    }
+  };
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber;
+  });
+
+  if (initializing) {
+    return null;
+  }
 
   return (
     <NavigationContainer>
@@ -18,17 +36,15 @@ const App: React.FC = () => {
           headerShown: false,
         }}
       >
-        {loggedIn ? (
+        {user === undefined || user === null ? (
+          <Stack.Screen name="Login">
+            {(props) => <LoginScreen {...props} />}
+          </Stack.Screen>
+        ) : (
           <>
             <Stack.Screen name="Main" component={TabBar} />
             <Stack.Screen name="Bird" component={BirdScreen} />
           </>
-        ) : (
-          <Stack.Screen name="Login">
-            {(props) => (
-              <LoginScreen {...props} onLogin={() => setLoggedIn(true)} />
-            )}
-          </Stack.Screen>
         )}
       </Stack.Navigator>
     </NavigationContainer>
