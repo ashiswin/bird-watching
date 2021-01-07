@@ -38,7 +38,7 @@ const App: React.FC = () => {
       >
         {user === undefined || user === null ? (
           <Stack.Screen name="Login">
-            {(props) => <LoginScreen {...props} onLogin={() => setUser({})} />}
+            {(props) => <LoginScreen {...props} />}
           </Stack.Screen>
         ) : (
           <>

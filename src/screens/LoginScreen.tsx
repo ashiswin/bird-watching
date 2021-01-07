@@ -6,6 +6,8 @@ import {
   View,
   Dimensions,
 } from "react-native";
+import auth from "@react-native-firebase/auth";
+import Toast from "react-native-simple-toast";
 import AppTextInput from "../components/AppTextInput";
 import Button from "../components/Button";
 import { Colors } from "../utils/Colors";
@@ -16,13 +18,28 @@ const background = {
     "https://images.unsplash.com/photo-1606830836043-d1045a1da55e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80",
 };
 
-interface Props {
-  onLogin: () => void;
-}
-
-const LoginScreen: React.FC<Props> = ({ onLogin }) => {
+const LoginScreen: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const onLogin = () => {
+    auth()
+      .signInWithEmailAndPassword(username, password)
+      .then(() => {
+        console.log("Signed in");
+      })
+      .catch((error) => {
+        if (error.code === "auth/invalid-email") {
+          Toast.show("Invalid username/password");
+        }
+
+        if (error.code === "auth/user-not-found") {
+          Toast.show("Invalid username/password");
+        }
+
+        console.log(error);
+      });
+  };
 
   return (
     <View style={styles.container}>
