@@ -58,6 +58,7 @@ const LoginScreen: React.FC = () => {
             onChange={(text) => setUsername(text)}
             value={username}
             placeholder="Username"
+            autoCapitalize={false}
           />
           <AppTextInput
             onChange={(text) => setPassword(text)}

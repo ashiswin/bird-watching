@@ -7,6 +7,7 @@ interface Props {
   placeholder: string;
   onChange?: (text: string) => void;
   style?: TextStyle;
+  autoCapitalize?: boolean;
 }
 
 const AppTextInput: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const AppTextInput: React.FC<Props> = ({
   onChange,
   password,
   style,
+  autoCapitalize,
 }) => {
   return (
     <TextInput
@@ -23,6 +25,7 @@ const AppTextInput: React.FC<Props> = ({
       value={value}
       placeholder={placeholder}
       secureTextEntry={password}
+      autoCapitalize={autoCapitalize ? "words" : "none"}
     />
   );
 };
