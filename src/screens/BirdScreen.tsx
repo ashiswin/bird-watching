@@ -86,24 +86,29 @@ const BirdScreen: React.FC<Props> = ({ navigation, route }) => {
               />
             </MapView>
           ) : (
-            <Text style={styles.lastLocationMissing}>
-              This bird has not been sighted yet.
-            </Text>
-          )}
+              <Text style={styles.lastLocationMissing}>
+                This bird has not been sighted yet.
+              </Text>
+            )}
         </View>
         <View>
           <Text style={styles.title}>Photo stream</Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <PhotoStreamImage source={bird.image} />
+            <PhotoStreamImage source={{
+              uri: "https://cdn.the-scientist.com/assets/articleNo/66820/hImg/34886/bird-banner3-l.png",
+              user: "isaac"
+            }} />
             <PhotoStreamImage
-              source={
-                "https://cdn.the-scientist.com/assets/articleNo/66820/hImg/34886/bird-banner3-l.png"
-              }
+              source={{
+                uri: "https://cdn.the-scientist.com/assets/articleNo/66820/hImg/34886/bird-banner3-l.png",
+                user: "ashiswin"
+              }}
             />
             <PhotoStreamImage
-              source={
-                "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/202984001"
-              }
+              source={{
+                uri: "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/202984001",
+                user: "bla"
+              }}
             />
           </ScrollView>
         </View>
@@ -133,20 +138,21 @@ const BirdScreen: React.FC<Props> = ({ navigation, route }) => {
             </Pressable>
           </View>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <PhotoStreamImage source={{
+              uri: "https://cdn.the-scientist.com/assets/articleNo/66820/hImg/34886/bird-banner3-l.png",
+              user: "isaac"
+            }} />
             <PhotoStreamImage
-              source={
-                "https://static.scientificamerican.com/sciam/cache/file/7A715AD8-449D-4B5A-ABA2C5D92D9B5A21_source.png"
-              }
+              source={{
+                uri: "https://cdn.the-scientist.com/assets/articleNo/66820/hImg/34886/bird-banner3-l.png",
+                user: "ashiswin"
+              }}
             />
             <PhotoStreamImage
-              source={
-                "https://static.scientificamerican.com/sciam/cache/file/7A715AD8-449D-4B5A-ABA2C5D92D9B5A21_source.png"
-              }
-            />
-            <PhotoStreamImage
-              source={
-                "https://www.hakaimagazine.com/wp-content/uploads/header-gulf-birds.jpg"
-              }
+              source={{
+                uri: "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/202984001",
+                user: "bla"
+              }}
             />
           </ScrollView>
         </View>

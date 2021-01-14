@@ -41,11 +41,11 @@ const App: React.FC = () => {
             {(props) => <LoginScreen {...props} />}
           </Stack.Screen>
         ) : (
-          <>
-            <Stack.Screen name="Main" component={TabBar} />
-            <Stack.Screen name="Bird" component={BirdScreen} />
-          </>
-        )}
+            <>
+              <Stack.Screen name="Main" component={TabBar} />
+              <Stack.Screen name="Bird" component={BirdScreen} />
+            </>
+          )}
       </Stack.Navigator>
     </NavigationContainer>
   );
