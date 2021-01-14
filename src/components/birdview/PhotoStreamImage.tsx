@@ -4,9 +4,10 @@ import { Icon, Image } from "react-native-elements";
 import ImageView from "react-native-image-viewing";
 import { Colors } from "../../utils/Colors";
 import { Spacing } from "../../utils/Spacing";
+import { Photo } from "../../providers/PhotoProvider";
 
 interface Props {
-  source: string;
+  source: Photo;
 }
 
 const PhotoStreamImage: React.FC<Props> = ({ source }) => {
@@ -18,7 +19,7 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
       <View>
         <View>
           <Image
-            source={{ uri: source }}
+            source={{ uri: source.uri }}
             style={styles.image}
             resizeMethod="scale"
           />
@@ -76,7 +77,7 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
         </View>
       </View>
       <ImageView
-        images={[{ uri: source }]}
+        images={[{ uri: source.uri }]}
         imageIndex={0}
         visible={isViewing}
         onRequestClose={() => setIsViewing(false)}
@@ -127,7 +128,7 @@ const PhotoStreamImage: React.FC<Props> = ({ source }) => {
                     marginRight: 8,
                   }}
                 >
-                  @ashiswin
+                  {source.user}
                 </Text>
                 <Icon
                   name="person"
